@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+
+<title>Ações CIPA 2026</title>
+</head>
+
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    if (link.hostname === window.location.hostname) {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location = this.href;
+            }, 300);
+        });
+    }
+});
+</script>
+
+<body>
+<nav>
+    <a href="menu_principal.html">Página Inicial</a>
+    <a href="alerta.html">Solicitar Ajuda</a>
+    <a href="acoes.html">Ações da CIPA</a>
+    <a href="reunioes.html">Calendário reuniões</a>
+</nav>
+
+<div class="container">
+
+<h1>Ações da CIPA -</h1>
+<div class="submenu">
+    <a href="acoes.html">2026</a>
+</div>
+
+<div class="card">
+    <h3>Projeto verão</h3>
+    <p>Realizado pausa hidratação no turno A e B dia 12/02/2026.</p>
+    <img src="IMG/acaoagua.png" alt="">
+</div>
+
+
+</div>
+
+</body>
+</html>

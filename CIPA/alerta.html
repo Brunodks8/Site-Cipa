@@ -1,0 +1,95 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerta para CIPA</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<script>
+const url = "https://script.google.com/macros/s/AKfycby74wcSFfg4VMCFXifXftKNmeqxLoSlq-n-b7shYyaW0kXX0pmikx93zqPIuF2weJSnPA/exec";
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* 🔎 Buscar setores */
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      const select = document.querySelector("select[name='setor']");
+      data.forEach(setor => {
+        const option = document.createElement("option");
+        option.value = setor;
+        option.textContent = setor;
+        select.appendChild(option);
+      });
+    });
+
+  /* 📩 Enviar formulário */
+  document.getElementById("alertaForm").addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const form = e.target;
+    const dados = Object.fromEntries(new FormData(form));
+
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(dados)
+    });
+
+    alert("✅ Alerta enviado com sucesso!");
+    form.reset();
+  });
+
+}); // 🔥 FALTAVA ISSO
+</script>
+
+<body>
+
+<header>
+    <nav>
+    <a href="menu_principal.html">Página Inicial</a>
+    <a href="alerta.html">Solicitar Ajuda</a>
+    <a href="acoes.html">Ações da CIPA</a>
+    <a href="reunioes.html">Calendário reuniões</a>
+</nav>
+</header>
+
+<div class="container">
+    <h2>Registrar situação / Risco</h2>
+
+    <form id="alertaForm">
+
+        <label>Nome (opcional)</label>
+        <input type="text" name="nome" placeholder="Digite seu nome">
+
+        <label>Setor</label>
+        <select name="setor" required>
+            <option value="">Selecione o setor</option>
+        </select>
+
+        <label>Tipo de ocorrência</label>
+        <select name="tipo" required>
+            <option value="">Selecione</option>
+            <option>Incidente</option>
+            <option>Risco de acidente</option>
+            <option>Equipamento com problema</option>
+            <option>Ausência de proteção</option>
+            <option>Falta de EPI</option>
+            <option>Outro</option>
+        </select>
+
+        <label>Descreva a situação</label>
+        <textarea name="descricao" required placeholder="Explique em detalhes..."></textarea>
+
+        <button type="submit">Enviar Alerta</button>
+
+    </form>
+
+    <div class="footer">
+        Comissão Interna de Prevenção de Acidentes - Gestão 2026
+    </div>
+</div>
+
+</body>
+</html>
