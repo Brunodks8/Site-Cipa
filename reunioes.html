@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário Reuniões CIPA 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    if (link.hostname === window.location.hostname) {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location = this.href;
+            }, 300);
+        });
+    }
+});
+</script>
+
+<body>
+
+<nav>
+    <a href="index.html">Página Inicial</a>
+    <a href="alerta.html">Solicitar Ajuda</a>
+    <a href="acoes.html">Ações da CIPA</a>
+    <a href="reunioes.html">Calendário reuniões</a>
+</nav>
+
+<div class="container">
+
+<h1>📅 Calendário de Reuniões CIPA 2026</h1>
+
+<div class="calendario">
+
+<div class="card">
+    <h3>Janeiro (Start)</h3>
+    <div class="data">19/01/2026</div>
+    <div class="horario">Horário: 08:00</div>
+</div>
+
+<div class="card">
+    <h3>Fevereiro</h3>
+    <div class="data">20/02/2026</div>
+    <div class="horario">Horário: 07:00</div>
+</div>
+
+<div class="card">
+    <h3>Março</h3>
+    <div class="data">25/03/2026</div>
+    <div class="horario">Horário: 15:20</div>
+</div>
+
+<div class="card">
+    <h3>Abril</h3>
+    <div class="data">17/04/2026</div>
+    <div class="horario">Horário: 07:00</div>
+</div>
+
+<div class="card">
+    <h3>Maio</h3>
+    <div class="data">27/05/2026</div>
+    <div class="horario">Horário: 15:20</div>
+</div>
+
+<div class="card">
+    <h3>Junho</h3>
+    <div class="data">29/06/2026</div>
+    <div class="horario">Horário: 07:00</div>
+</div>
+
+<div class="card">
+    <h3>Julho</h3>
+    <div class="data">30/07/2026</div>
+    <div class="horario">Horário: 15:20</div>
+</div>
+
+<div class="card">
+    <h3>Agosto</h3>
+    <div class="data">24/08/2026</div>
+    <div class="horario">Horário: 07:00</div>
+</div>
+
+<div class="card">
+    <h3>Setembro</h3>
+    <div class="data">24/09/2026</div>
+    <div class="horario">Horário: 15:20</div>
+</div>
+
+<div class="card">
+    <h3>Outubro</h3>
+    <div class="data">27/10/2026</div>
+    <div class="horario">Horário: 07:00</div>
+</div>
+
+<div class="card">
+    <h3>Novembro</h3>
+    <div class="data">19/11/2026</div>
+    <div class="horario">Horário: 15:20</div>
+</div>
+
+<div class="card">
+    <h3>Dezembro</h3>
+    <div class="data">29/12/2026</div>
+    <div class="horario">Horário: 07:00</div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
