@@ -23,28 +23,15 @@ document.querySelectorAll("a").forEach(link => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const membros = document.querySelector(".membros");
-    const btnLeft = document.querySelector(".arrow.left");
-    const btnRight = document.querySelector(".arrow.right");
-
-    let index = 0;
-    const visible = 3;
-    const total = document.querySelectorAll(".membro").length;
-
-    const item = document.querySelector(".membro");
-    const itemWidth = item.offsetWidth + 20; // largura + gap
-
-    btnRight.addEventListener("click", () => {
-        if (index + visible < total) {
-            index += visible;
-            membros.style.transform = `translateX(-${index * itemWidth}px)`;
-        }
-    });
-
-    btnLeft.addEventListener("click", () => {
-        if (index > 0) {
-            index -= visible;
-            membros.style.transform = `translateX(-${index * itemWidth}px)`;
+    document.querySelectorAll("a").forEach(link => {
+        if (link.hostname === window.location.hostname) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location = this.href;
+                }, 300);
+            });
         }
     });
 
@@ -68,12 +55,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- PÁGINA INICIAL -->
  <!-- MEMBROS -->
+
+ <div id="home" class="section active">
+    <h1>Bem-vindo à CIPA</h1>
+    <div class="card">
+        <p>A CIPA (Comissão Interna de Prevenção de Acidentes e Assédio) tem como objetivo promover um 
+ambiente de trabalho mais seguro e saudável para todos. Ela atua identificando riscos, sugerindo
+melhorias e acompanhando ações preventivas nos setores. Também funciona como um canal de comunicação 
+entre os colaboradores e a empresa quando o assunto é segurança. A segurança é responsabilidade 
+de todos. Ao identificar qualquer situação de risco, 
+utilize a aba "SOLICITAR AJUDA" deste site para informar a CIPA.</p>
+
+    </div>
+</div>
 <div id="membros" class="section">
-    <h1>Membros da CIPA</h1>
+    <h1>Membros da CIPA:</h1>
 
     <div class="carousel-wrapper">
 
-        <button class="arrow left">&#10094;</button>
 
         <div class="carousel">
             <div class="membros">
@@ -151,25 +150,19 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </div>
 
-        <button class="arrow right">&#10095;</button>
 
     </div>
 </div>
-<div id="home" class="section active">
-    <h1>Bem-vindo à CIPA</h1>
-    <div class="card">
-        <p>A CIPA (Comissão Interna de Prevenção de Acidentes e Assédio) tem como objetivo promover um 
-ambiente de trabalho mais seguro e saudável para todos. Ela atua identificando riscos, sugerindo
-melhorias e acompanhando ações preventivas nos setores. Também funciona como um canal de comunicação 
-entre os colaboradores e a empresa quando o assunto é segurança. A segurança é responsabilidade 
-de todos. Ao identificar qualquer situação de risco, 
-utilize a aba "SOLICITAR AJUDA" deste site para informar a CIPA.</p>
 
-    </div>
-</div>
 
     
 
 
 </body>
+</html>
+    
+
+
+</body>
+
 </html>
